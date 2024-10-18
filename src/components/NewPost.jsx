@@ -69,25 +69,22 @@ const NewPost = ({ image }) => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
 
-        // Draw the original image on the canvas
         const img = imgRef.current;
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        // Draw facial expressions on the canvas
         ctx.font = '20px Arial';
-        ctx.fillStyle = 'black'; // Changed font color to black
+        ctx.fillStyle = 'black';
         faces.forEach(({ box, expressions }) => {
             if (box) {
                 const { x, y } = box;
                 const maxExpression = Object.entries(expressions).reduce((max, [key, value]) => value > max.value ? { key, value } : max, { key: '', value: 0 });
-                ctx.fillStyle = 'white'; // Changed background color to white
+                ctx.fillStyle = 'white';
                 ctx.fillRect(x, y - 30, ctx.measureText(maxExpression.key).width, 30);
-                ctx.fillStyle = 'black'; // Changed font color to black
+                ctx.fillStyle = 'black';
                 ctx.fillText(maxExpression.key, x, y - 10);
             }
         });
 
-        // Download the canvas as an image
         const link = document.createElement("a");
         link.download = "image_with_expressions.png";
         link.href = canvas.toDataURL();
@@ -99,18 +96,18 @@ const NewPost = ({ image }) => {
     return (
         <div className="postContainer">
             <div className="imgArea">
-                <div className="left" style={{ width, height }}>
+                <div className="left">
                     <img ref={imgRef} crossOrigin="anonymous" src={url} alt="Post Image" />
                     <canvas
                         onMouseEnter={enter}
                         ref={canvasRef}
-                        width={width}
-                        height={height}
+                    // width={width}
+                    // height={height}
                     />
                 </div>
             </div>
             <div className="right">
-                <h1>Share this image now!</h1>
+                <p>Download this image now!</p>
                 <button className="rightButton" onClick={saveImage}>Download</button>
             </div>
         </div>

@@ -36,7 +36,7 @@ function App() {
             <h1>FaceGrips</h1>
             <p id="intoHead">Face Expressions Detector</p>
             <p id="introPara">
-              Welcome to <b>FaceGrips</b>, a project of umscripts. This app leverages
+              Welcome to <b>FaceGrips</b>, a project of <a href="https://umscripts.netlify.app">umscripts</a>. This app leverages
               advanced facial recognition and expression detection technologies
               to analyze and interpret images in real-time. By simply uploading
               a photo, our app can accurately detect faces and identify their
