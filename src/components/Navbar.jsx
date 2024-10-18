@@ -1,7 +1,9 @@
+import faceImg from "../assets/face-detection.png";
+
 const Navbar = () => {
     return (
         <div className="navbar">
-            <div className="logo">FaceGrips</div>
+            <img src={faceImg} alt="" /><div>FaceGrips</div>
         </div>
     );
 };

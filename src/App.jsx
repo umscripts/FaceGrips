@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import NewPost from "./components/NewPost";
 import faceImg from "../src/assets/face-detection.png";
+import Footer from "./components/Footer";
 
 function App() {
   const [file, setFile] = useState();
@@ -32,16 +33,23 @@ function App() {
       ) : (
         <div className="container">
           <div className="leftSection">
-            <p className="title">FaceGrips</p>
-            <h1>Face Expressions Detector</h1>
-            <p>Welcome to <b>FaceGrips</b>, a project of <b>umscripts</b>. This app levarages advacnced facial recognition and expression detection tochnologies to analyze and interpret images in real-time. By simple uploading a photo, our app can accurately detect faces and identify their expressions, providing insightful information at a glance.</p>
-            <label htmlFor="file">
+            <h1>FaceGrips</h1>
+            <p id="intoHead">Face Expressions Detector</p>
+            <p id="introPara">
+              Welcome to <b>FaceGrips</b>, a project of umscripts. This app leverages
+              advanced facial recognition and expression detection technologies
+              to analyze and interpret images in real-time. By simply uploading
+              a photo, our app can accurately detect faces and identify their
+              expressions, providing insightful information at a glance.
+            </p>
+            {/* Label triggers hidden file input */}
+            <label htmlFor="file" className="uploadBtn">
               <img
                 className="addImg"
-                src="https://cdn.icon-icons.com/icons2/564/PNG/512/Add_Image_icon-icons.com_54218.png"
-                alt=""
+                src="https://www.pngplay.com/wp-content/uploads/8/Upload-Icon-Image-Background-PNG-Image.png"
+                alt="upload"
               />
-              <p>Upload Image</p>
+              Upload Image
             </label>
             <input
               onChange={(e) => setFile(e.target.files[0])}
@@ -50,12 +58,10 @@ function App() {
               type="file"
             />
           </div>
-          <div className="rightSection">
-            <img className="faceImg" src={faceImg} />
-
-          </div>
+          <img className="faceImg" src={faceImg} alt="face detection" />
         </div>
       )}
+      <Footer />
     </div>
   );
 }

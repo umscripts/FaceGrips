@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: "Bitter", serif;
+    font-style: normal;
 }
+
 
 body {
     background-image: linear-gradient(73deg, #1570ac 20%, #65aff5 46%);
+    background-repeat: no-repeat;
     height: 100vh;
 }
 
-.rightSection img {
+.faceImg {
     background: transparent;
     color: white;
     filter: invert(100%);
-    width: 95%;
+    width: 35%;
 }
 
 .app {
@@ -26,45 +31,86 @@ canvas {
 }
 
 .navbar {
-    background: #0b4b75;
+    background: #125a8a;
     color: white;
-    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.logo {
+    padding: 10px;
     font-size: 26px;
 }
 
-.container {
-    max-height: 92vh;
+.footer {
+    background: #125a8a;
+    color: white;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#footerLink {
+    color: rgb(255, 100, 53);
+    text-decoration: none;
+    margin: 0px 5px;
+}
+
+.navbar img {
+    background: transparent;
+    color: white;
+    filter: invert(100%);
+    width: 60px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .leftSection {
-    width: 50vw;
-    padding: 5% 5%;
-    margin-top: 2%;
     color: white;
+    width: 50%;
+    padding: 0px 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.uploadBtn {
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #1570ac;
+}
+
+.uploadBtn:hover {
+    box-shadow: 0px 0px 5px white;
 }
 
 .leftSection h1 {
-    font-size: 40px;
-    font-weight: normal;
+    /* font-size: 40px;
+    font-weight: normal; */
 }
 
 .leftSection p {
-    margin: 5% 0%;
-    font-size: 16px;
-}
-
-.rightSection {
-    width: 45vw;
+    /* margin: 5% 0%;
+    font-size: 16px; */
 }
 
 
+/* 
 label {
     display: flex;
     align-items: center;
@@ -75,17 +121,15 @@ label {
     background: white;
     color: #1570ac;
     font-weight: bold;
-}
+} */
 
-label:hover {
+/* label:hover {
     box-shadow: 0px 0px 10px white;
 
-}
+} */
 
 .addImg {
-    width: 25px;
-    cursor: pointer;
-    margin: 0px 10px;
+    width: 35px;
 }
 
 .postForm {
@@ -98,9 +142,18 @@ label:hover {
 }
 
 .leftSection .title {
-    font-size: 80px;
+    /* font-size: 80px;
     font-weight: bold;
-    margin: 0px;
+    margin: 0px; */
+}
+
+#intoHead {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#introPara {
+    font-size: 18px;
 }
 
 .avatar {
@@ -111,11 +164,11 @@ label:hover {
 }
 
 button {
-    border: none;
+    /* border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    color: #1570ac;
+    color: #1570ac; */
 }
 
 .postContainer {
@@ -141,15 +194,18 @@ button {
 }
 
 .rightButton {
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 5px;
+    padding: 10px;
     cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #1570ac;
+    font-size: 18px;
+    margin: 20px;
 }
 
 .rightButton:hover {
-    box-shadow: 0px 0px 10px white;
+    box-shadow: 0px 0px 5px white;
 }
 
 .right h1 {
@@ -179,4 +235,150 @@ button {
     top: 0;
     height: 65vh;
     overflow: hidden;
+}
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+
+    .leftSection {
+        width: 70%;
+        padding: 0px 45px;
+        /* display: flex; */
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .leftSection h1 {
+        font-size: 30px;
+    }
+
+    #intoHead {
+        font-size: 36px;
+    }
+
+    #introPara {
+        font-size: 16px;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .faceImg {
+        width: 30%;
+    }
+}
+
+/* Styles for screens smaller than 480px (mobile devices) */
+@media (min-width: 750px) and (max-width: 1024px) {
+
+    .leftSection {
+        width: 70%;
+        padding: 0px 45px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .leftSection h1 {
+        font-size: 22px;
+    }
+
+    #intoHead {
+        font-size: 28px;
+    }
+
+    #introPara {
+        font-size: 14px;
+    }
+
+    .container {
+        margin-top: 80px;
+    }
+
+    /* .faceImg {
+        width: 30%;
+    } */
+}
+
+@media (min-width: 480px) and (max-width: 750px) {
+
+    .leftSection {
+        width: 100%;
+        padding: 0px 45px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leftSection h1 {
+        font-size: 26px;
+    }
+
+    #intoHead {
+        font-size: 32px;
+    }
+
+    #introPara {
+        font-size: 14px;
+    }
+
+    .container {
+        margin-top: 50px;
+        flex-direction: column;
+    }
+
+    .faceImg {
+        margin-top: 10px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .navbar img {
+        width: 40px;
+    }
+
+    .leftSection {
+        width: 100%;
+        padding: 0px 26px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .leftSection h1 {
+        font-size: 20px;
+    }
+
+    #intoHead {
+        font-size: 28px;
+    }
+
+    #introPara {
+        font-size: 14px;
+    }
+
+    .container {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .faceImg {
+        /* margin-top: px; */
+        width: 70%;
+    }
+
+    .footer {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    #footerLink {
+        color: rgb(255, 100, 53);
+        text-decoration: none;
+        margin: 0px 5px;
+    }
 }
